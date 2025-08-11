@@ -1,0 +1,31 @@
+display-all-research {
+  display: grid;
+  gap: 30px;
+}
+
+display-all-research > div > h2 {
+  grid-area: title;
+}
+
+display-all-research > div > h3 {
+  grid-area: categories;
+}
+
+display-all-research > div > p {
+  grid-area: text;
+}
+
+display-all-research > div > .research-buttons {
+  grid-area: buttons;
+}
+
+display-all-research > div {
+  display: grid;
+  gap: 10px;
+  grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr;
+  grid-template-areas: 
+    "title title"
+    "categories ."
+    "text text"
+    ". buttons";
+}
