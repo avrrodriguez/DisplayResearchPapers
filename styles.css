@@ -20,12 +20,22 @@ a {
     cursor: pointer;
 }
 
-p {
+p, a {
     margin: 0px;
+    font-family: sans-serif;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 19px;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0px;
+    font-family: monospace;
 }
 
 header {
@@ -62,4 +72,17 @@ header a {
 
 #content {
     padding: 20px;
+}
+
+.research-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.research-buttons > a {
+    padding: 5px 10px;
+    background-color: var(--light-green);
+    display: grid;
+    justify-content: center;
 }

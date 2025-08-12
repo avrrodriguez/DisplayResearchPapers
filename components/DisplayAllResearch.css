@@ -1,6 +1,7 @@
 display-all-research {
   display: grid;
   gap: 30px;
+  justify-content: center;
 }
 
 display-all-research > div > h2 {
@@ -9,6 +10,7 @@ display-all-research > div > h2 {
 
 display-all-research > div > h3 {
   grid-area: categories;
+  margin-bottom: 10px;
 }
 
 display-all-research > div > p {
@@ -22,10 +24,12 @@ display-all-research > div > .research-buttons {
 display-all-research > div {
   display: grid;
   gap: 10px;
-  grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr;
+  grid-template: auto auto auto auto / 1fr 1fr;
   grid-template-areas: 
     "title title"
     "categories ."
     "text text"
     ". buttons";
+
+  max-width: 900px;
 }
