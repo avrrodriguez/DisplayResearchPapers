@@ -1,3 +1,5 @@
+import Router from "../services/Router.js";
+
 export class DisplayAllResearch extends HTMLElement {
   constructor() {
     super();
@@ -38,6 +40,14 @@ export class DisplayAllResearch extends HTMLElement {
                             <a>Download Study</a>
                         </div
                     `;
+
+          addDiv.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", (event) => {
+              event.preventDefault();
+              app.router.go("/study");
+            });
+          });
+
           displayResearchElement.appendChild(addDiv);
         }
       } else {

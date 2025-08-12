@@ -35,7 +35,8 @@ const Router = {
       case "/cart":
         break;
       default:
-        if (route.startsWith("/study-")) {
+        if (route.startsWith("/study")) {
+          pageElement = document.createElement("display-study");
         }
         break;
     }
