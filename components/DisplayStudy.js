@@ -1,6 +1,17 @@
 export class DisplayStudy extends HTMLElement {
   constructor() {
     super();
+
+    let element = document.querySelector("section");
+    let styles = document.createElement("style");
+
+    async function LoadCSS() {
+      let stylesFile = await fetch("./components/DisplayStudy.css");
+      styles.textContent = await stylesFile.text();
+      element.appendChild(styles);
+    }
+
+    LoadCSS();
   }
 
   connectedCallback() {

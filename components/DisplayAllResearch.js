@@ -4,8 +4,8 @@ export class DisplayAllResearch extends HTMLElement {
   constructor() {
     super();
 
-    const element = document.querySelector("section");
-    const styles = document.createElement("style");
+    let element = document.querySelector("section");
+    let styles = document.createElement("style");
 
     async function LoadCSS() {
       let stylesFile = await fetch("./components/DisplayAllResearch.css");
