@@ -21,14 +21,23 @@ export class DisplayStudy extends HTMLElement {
   render() {
     const contentSection = document.getElementById("content");
     contentSection.innerHTML = "";
+
+    let study = this.getStudyInfo();
+    console.log(study);
+
     let displayStudy = document.createElement("div");
     displayStudy.innerHTML += `
-      <h2>Study Title</h2>
-      <h3>Study categories</h3>
-      <p>study abstract</p>
+      <h2>${study.title}</h2>
+      <h3>${study.fieldsOfStudy}</h3>
+      <p>${study.abstract}</p>
       <p>buttons</p>
     `;
 
     contentSection.appendChild(displayStudy);
+  }
+
+  getStudyInfo() {
+    let currentUrl = document.URL;
+    return app.store.menu.matches[currentUrl.split("-")[1]];
   }
 }

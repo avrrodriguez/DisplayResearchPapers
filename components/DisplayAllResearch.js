@@ -29,12 +29,12 @@ export class DisplayAllResearch extends HTMLElement {
       let displayResearchElement = section.childNodes[0];
       displayResearchElement.innerHTML = ``;
       if (app.store.menu) {
-        for (let item of app.store.menu.matches) {
+        for (let item = 0; item < app.store.menu.matches.length; item++) {
           let addDiv = document.createElement("div");
           addDiv.innerHTML += `
-                        <h2>${item.title}</h2>
-                        <h3>${item.categories}</h3>
-                        <p>${item.abstract}</p>
+                        <h2>${app.store.menu.matches[item].title}</h2>
+                        <h3>${app.store.menu.matches[item].categories}</h3>
+                        <p>${app.store.menu.matches[item].abstract}</p>
                         <div class="research-buttons">
                             <a>Read Full Study</a>
                             <a>Download Study</a>
@@ -44,7 +44,7 @@ export class DisplayAllResearch extends HTMLElement {
           addDiv.querySelectorAll("a").forEach((link) => {
             link.addEventListener("click", (event) => {
               event.preventDefault();
-              app.router.go("/study");
+              app.router.go(`/study-${item}`);
             });
           });
 
