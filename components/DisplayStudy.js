@@ -20,20 +20,31 @@ export class DisplayStudy extends HTMLElement {
 
   render() {
     const contentSection = document.getElementById("content");
-    contentSection.innerHTML = "";
+    if (contentSection.childNodes[0]) {
+      let displayStudy = contentSection.childNodes[0];
+      displayStudy.innerHTML = "";
 
-    let study = this.getStudyInfo();
-    console.log(study);
+      let study = this.getStudyInfo();
 
-    let displayStudy = document.createElement("div");
-    displayStudy.innerHTML += `
-      <h2>${study.title}</h2>
-      <h3>${study.fieldsOfStudy}</h3>
-      <p>${study.abstract}</p>
-      <p>buttons</p>
-    `;
+      let studyDiv = document.createElement("div");
+      studyDiv.innerHTML += `
+        <p class="study-date">${study.publicationDate}</p>
+        <h2 class="study-title">${study.title}</h2>
+        <h3 class="study-authors">${study.authors}</h3>
+        <h3 class="study-fields">${study.fieldsOfStudy}</h3>
+        <p class="study-abstract">${study.abstract}</p>
+        <div class="study-urls">
+          <p class="study-pdf-url">pdf download</p>
+          <p class="study-read-url">read online</p>
+        </div>
+        <div class="publication-info">
+          <p>${study.publicationName}</p>
+          <p>${study.publicationURL}</p>
+        </div>
+      `;
 
-    contentSection.appendChild(displayStudy);
+      displayStudy.appendChild(studyDiv);
+    }
   }
 
   getStudyInfo() {

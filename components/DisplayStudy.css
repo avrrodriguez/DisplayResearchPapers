@@ -1,3 +1,51 @@
+display-study {
+  display: grid;
+  justify-content: center;
+}
+
+.study-date {
+  grid-area: studydate;
+}
+
+.study-title  {
+  grid-area: studytitle;
+}
+
+.study-authors {
+  grid-area: studyauthors;
+}
+
+.study-fields {
+  grid-area: studyfields;
+}
+
+.study-abstract {
+  grid-area: studyabstract;
+}
+
+.study-urls {
+  grid-area: studyurls;
+}
+
+.publication-info {
+  grid-area: studypublicationinfo;
+}
+
+display-study > div {
+  max-width: 800px;
+  display: grid;
+  gap: 25px;
+
+  grid-template-areas: 
+  "studydate ."
+  "studytitle studytitle"
+  "studyauthors studyfields"
+  "studyabstract studyabstract"
+  "studyurls studyurls"
+  "studypublicationinfo studypublicationinfo"
+  ;
+}
+
 h2 {
   color: red;
 }

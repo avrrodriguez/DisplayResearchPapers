@@ -36,6 +36,7 @@ const Router = {
         break;
       default:
         if (route.startsWith("/study-")) {
+          console.log("adding display study element");
           pageElement = document.createElement("display-study");
         }
         break;
