@@ -1,5 +1,7 @@
 import ResearchDataAPI from "./ResearchDataAPI.js";
 
 export async function LoadData() {
-    app.store.menu = await ResearchDataAPI();
-};
+  console.log("calling api");
+  let dataArray = await ResearchDataAPI();
+  app.store.menu = dataArray.data;
+}

@@ -29,12 +29,12 @@ export class DisplayAllResearch extends HTMLElement {
       let displayResearchElement = section.childNodes[0];
       displayResearchElement.innerHTML = ``;
       if (app.store.menu) {
-        for (let item = 0; item < app.store.menu.matches.length; item++) {
+        for (let item = 0; item < app.store.menu.length; item++) {
           let addDiv = document.createElement("div");
           addDiv.innerHTML += `
-                        <h2>${app.store.menu.matches[item].title}</h2>
-                        <h3>${app.store.menu.matches[item].categories}</h3>
-                        <p>${app.store.menu.matches[item].abstract}</p>
+                        <h2>${app.store.menu[item].title}</h2>
+                        <h3>${app.store.menu[item].categories}</h3>
+                        <p>${app.store.menu[item].abstract}</p>
                         <div class="research-buttons">
                         <a class="site-button">Download Study</a>
                             <a class="site-button">More Information</a>

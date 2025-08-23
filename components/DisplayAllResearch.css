@@ -1,6 +1,6 @@
 display-all-research {
   display: grid;
-  gap: 30px;
+  gap: 50px;
   justify-content: center;
 }
 
@@ -23,7 +23,7 @@ display-all-research > div > .research-buttons {
 
 display-all-research > div {
   display: grid;
-  gap: 10px;
+  gap: 20px;
   grid-template: auto auto auto auto / 1fr 1fr;
   grid-template-areas: 
     "title title"
