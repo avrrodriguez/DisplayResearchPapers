@@ -80,9 +80,11 @@ header a {
     gap: 20px;
 }
 
-.research-buttons > a {
+.site-button {
     padding: 5px 10px;
     background-color: var(--light-green);
     display: grid;
     justify-content: center;
+    color: black;
+    text-decoration: none;
 }

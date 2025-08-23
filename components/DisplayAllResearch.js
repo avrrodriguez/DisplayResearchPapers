@@ -36,8 +36,8 @@ export class DisplayAllResearch extends HTMLElement {
                         <h3>${app.store.menu.matches[item].categories}</h3>
                         <p>${app.store.menu.matches[item].abstract}</p>
                         <div class="research-buttons">
-                            <a>Read Full Study</a>
-                            <a>Download Study</a>
+                        <a class="site-button">Download Study</a>
+                            <a class="site-button">More Information</a>
                         </div
                     `;
 

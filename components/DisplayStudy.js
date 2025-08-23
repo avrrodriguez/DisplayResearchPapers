@@ -28,18 +28,26 @@ export class DisplayStudy extends HTMLElement {
 
       let studyDiv = document.createElement("div");
       studyDiv.innerHTML += `
-        <p class="study-date">${study.publicationDate}</p>
-        <h2 class="study-title">${study.title}</h2>
+        <div class="study-date-title">
+          <p class="study-date">${study.publicationDate}</p>
+          <h2 class="study-title">${study.title}</h2>
+        </div>
         <h3 class="study-authors">${study.authors}</h3>
-        <h3 class="study-fields">${study.fieldsOfStudy}</h3>
+        <h4 class="study-fields">${study.fieldsOfStudy}</h3>
         <p class="study-abstract">${study.abstract}</p>
         <div class="study-urls">
-          <p class="study-pdf-url">pdf download</p>
-          <p class="study-read-url">read online</p>
+          <a 
+            class="study-pdf-url site-button"
+            href="/"
+          >PDF Download</a>
+          <a 
+            class="study-read-url 
+            site-button" href="/"
+          >Read Online</a>
         </div>
         <div class="publication-info">
           <p>${study.publicationName}</p>
-          <p>${study.publicationURL}</p>
+          <a href="/">${study.publicationURL}</a>
         </div>
       `;
 

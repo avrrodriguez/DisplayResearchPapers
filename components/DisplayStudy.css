@@ -3,12 +3,10 @@ display-study {
   justify-content: center;
 }
 
-.study-date {
-  grid-area: studydate;
-}
-
-.study-title  {
-  grid-area: studytitle;
+.study-date-title {
+  grid-area: studydatetitle;
+  display: grid;
+  gap: 5px;
 }
 
 .study-authors {
@@ -17,6 +15,7 @@ display-study {
 
 .study-fields {
   grid-area: studyfields;
+  justify-self: end;
 }
 
 .study-abstract {
@@ -25,10 +24,20 @@ display-study {
 
 .study-urls {
   grid-area: studyurls;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 25px;
+}
+
+.study-pdf-url {
+  grid-column-start: 2;
 }
 
 .publication-info {
   grid-area: studypublicationinfo;
+  display: grid;
+  gap: 5px;
 }
 
 display-study > div {
@@ -37,15 +46,10 @@ display-study > div {
   gap: 25px;
 
   grid-template-areas: 
-  "studydate ."
-  "studytitle studytitle"
+  "studydatetitle studydatetitle"
   "studyauthors studyfields"
   "studyabstract studyabstract"
   "studyurls studyurls"
   "studypublicationinfo studypublicationinfo"
   ;
-}
-
-h2 {
-  color: red;
 }
