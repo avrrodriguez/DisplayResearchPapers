@@ -4,7 +4,7 @@ export default async function ResearchDataAPI() {
   let limit = 3;
   let offset = 0;
   const response = await fetch(
-    `https://api.semanticscholar.org/graph/v1/paper/searchquery=${query}&fields=${fields}&offset=${offset}&limit=${limit}`
+    `https://api.semanticscholar.org/graph/v1/paper/search?query=${query}&fields=${fields}&offset=${offset}&limit=${limit}`
   );
   return await response.json();
 }
