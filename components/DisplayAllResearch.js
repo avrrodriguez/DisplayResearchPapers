@@ -32,8 +32,10 @@ export class DisplayAllResearch extends HTMLElement {
         for (let item = 0; item < app.store.menu.length; item++) {
           let addDiv = document.createElement("div");
           addDiv.innerHTML += `
-                        <h2>${app.store.menu[item].title}</h2>
-                        <h3>${app.store.menu[item].categories}</h3>
+                        <h2>${app.store.menu[item].title.toUpperCase()}</h2>
+                        <h3>${[
+                          ...new Set(app.store.menu[item].s2FieldsOfStudy.map((item) => " " + item.category)),
+                        ]}</h3>
                         <p>${app.store.menu[item].abstract}</p>
                         <div class="research-buttons">
                         <a class="site-button">Download Study</a>
