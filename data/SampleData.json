@@ -1,5 +1,5 @@
 {
-  "matches": [
+  "data": [
     {
       "id": "0000000",
       "title": "SciBERT: A Pretrained Language Model for Scientific Text",
@@ -9,12 +9,12 @@
       "authors": "dude, some, one, another, dude, final, et al.",
       "onlineUrl": "url.com",
       "pdfUrl": "pdf.com",
-      "fieldsOfStudy": "computer kagaku",
+      "s2FieldsOfStudy": ["computer kagaku"],
       "publicationName": "SomeJournalName",
       "publicationURL": "somejournalname.com"
     },
     {
-      "id": "11111",
+      "id": "1111111",
       "title": "SciBERT: A Pretrained Language Model for Scientific Text",
       "categories": "economics, biology",
       "abstract": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -22,12 +22,12 @@
       "authors": "dude, some, one, another, dude, final, et al.",
       "onlineUrl": "url.com",
       "pdfUrl": "pdf.com",
-      "fieldsOfStudy": "computer kagaku",
+      "s2FieldsOfStudy": ["computer kagaku"],
       "publicationName": "SomeJournalName",
       "publicationURL": "somejournalname.com"
     },
     {
-      "id": "22222",
+      "id": "2222222",
       "title": "SciBERT: A Pretrained Language Model for Scientific Text",
       "categories": "economics, biology",
       "abstract": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -35,12 +35,12 @@
       "authors": "dude, some, one, another, dude, final, et al.",
       "onlineUrl": "url.com",
       "pdfUrl": "pdf.com",
-      "fieldsOfStudy": "computer kagaku",
+      "s2FieldsOfStudy": ["computer kagaku"],
       "publicationName": "SomeJournalName",
       "publicationURL": "somejournalname.com"
     },
     {
-      "id": "33333",
+      "id": "3333333",
       "title": "SciBERT: A Pretrained Language Model for Scientific Text",
       "categories": "economics, biology",
       "abstract": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -48,7 +48,7 @@
       "authors": "dude, some, one, another, dude, final, et al.",
       "onlineUrl": "url.com",
       "pdfUrl": "pdf.com",
-      "fieldsOfStudy": "computer kagaku",
+      "s2FieldsOfStudy": ["computer kagaku"],
       "publicationName": "SomeJournalName",
       "publicationURL": "somejournalname.com"
     }

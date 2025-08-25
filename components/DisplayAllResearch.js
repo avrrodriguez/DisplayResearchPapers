@@ -17,7 +17,7 @@ export class DisplayAllResearch extends HTMLElement {
   }
 
   connectedCallback() {
-    window.addEventListener("appmenuchange", () => {
+    window.addEventListener("applistchange", () => {
       this.render();
     });
     this.render();
@@ -28,15 +28,15 @@ export class DisplayAllResearch extends HTMLElement {
     if (section.childNodes[0]) {
       let displayResearchElement = section.childNodes[0];
       displayResearchElement.innerHTML = ``;
-      if (app.store.menu) {
-        for (let item = 0; item < app.store.menu.length; item++) {
+      if (app.store.list) {
+        for (let item = 0; item < app.store.list.length; item++) {
           let addDiv = document.createElement("div");
           addDiv.innerHTML += `
-                        <h2>${app.store.menu[item].title.toUpperCase()}</h2>
+                        <h2>${app.store.list[item].title.toUpperCase()}</h2>
                         <h3>${[
-                          ...new Set(app.store.menu[item].s2FieldsOfStudy.map((item) => " " + item.category)),
+                          ...new Set(app.store.list[item].s2FieldsOfStudy.map((item) => " " + item.category)),
                         ]}</h3>
-                        <p>${app.store.menu[item].abstract}</p>
+                        <p>${app.store.list[item].abstract}</p>
                         <div class="research-buttons">
                         <a class="site-button">Download Study</a>
                             <a class="site-button">More Information</a>

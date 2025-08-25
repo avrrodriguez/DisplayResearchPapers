@@ -44,7 +44,7 @@ const Router = {
 
     // adds page based on route
     if (pageElement) {
-      const cache = document.querySelector("section");
+      const cache = document.getElementById("content");
       cache.innerHTML = "";
       cache.appendChild(pageElement);
       window.scrollX = 0;
