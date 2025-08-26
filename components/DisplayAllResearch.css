@@ -29,7 +29,6 @@ display-all-research > div:nth-child(n + 2) {
     "categories ."
     "text text"
     ". buttons";
-
   max-width: 900px;
 }
 
@@ -37,4 +36,14 @@ display-all-research > div:nth-child(n + 2) {
   width: 100%;
   border-radius: 5px;
   height: 30px;
+}
+
+@media screen and (max-width: 630px) {
+  display-all-research > div:nth-child(n + 2) {
+    grid-template-areas: 
+    "title title"
+    "categories ."
+    "text text"
+    "buttons buttons";
+  }
 }

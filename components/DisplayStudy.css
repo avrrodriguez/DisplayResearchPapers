@@ -53,3 +53,13 @@ display-study > div {
   "studypublicationinfo studypublicationinfo"
   ;
 }
+
+@media screen and (max-width: 630px) {
+  .study-urls {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .study-pdf-url {
+    grid-column-start: unset;
+  }
+}

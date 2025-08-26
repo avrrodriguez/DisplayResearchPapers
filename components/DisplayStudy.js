@@ -33,7 +33,7 @@ export class DisplayStudy extends HTMLElement {
           <h2 class="study-title">${study.title}</h2>
         </div>
         <h3 class="study-authors">${study.authors}</h3>
-        <h4 class="study-fields">${study.fieldsOfStudy}</h3>
+        <h4 class="study-fields">${[...new Set(study.s2FieldsOfStudy.map((item) => " " + item.category))]}</h3>
         <p class="study-abstract">${study.abstract}</p>
         <div class="study-urls">
           <a 
@@ -57,6 +57,6 @@ export class DisplayStudy extends HTMLElement {
 
   getStudyInfo() {
     let currentUrl = document.URL;
-    return app.store.menu.matches[currentUrl.split("-")[1]];
+    return app.store.list[currentUrl.split("-")[1]];
   }
 }
