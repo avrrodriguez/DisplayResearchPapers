@@ -1,7 +1,6 @@
 display-all-research {
   display: grid;
   gap: 50px;
-  justify-content: center;
 }
 
 display-all-research > div > h2 {
@@ -21,7 +20,7 @@ display-all-research > div > .research-buttons {
   grid-area: buttons;
 }
 
-display-all-research > div {
+display-all-research > div:nth-child(n + 2) {
   display: grid;
   gap: 20px;
   grid-template: auto auto auto auto / 1fr 1fr;
@@ -32,4 +31,10 @@ display-all-research > div {
     ". buttons";
 
   max-width: 900px;
+}
+
+#search-form > input {
+  width: 100%;
+  border-radius: 5px;
+  height: 30px;
 }

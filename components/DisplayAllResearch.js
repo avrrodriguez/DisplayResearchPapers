@@ -1,4 +1,5 @@
 import Router from "../services/Router.js";
+import SearchForm from "./SearchForm.js";
 
 export class DisplayAllResearch extends HTMLElement {
   constructor() {
@@ -28,10 +29,12 @@ export class DisplayAllResearch extends HTMLElement {
     if (section.childNodes[0]) {
       let displayResearchElement = section.childNodes[0];
       displayResearchElement.innerHTML = ``;
-      if (app.store.list) {
-        for (let item = 0; item < app.store.list.length; item++) {
-          let addDiv = document.createElement("div");
-          addDiv.innerHTML += `
+
+      displayResearchElement.appendChild(SearchForm());
+
+      for (let item = 0; item < app.store.list.length; item++) {
+        let addDiv = document.createElement("div");
+        addDiv.innerHTML += `
                         <h2>${app.store.list[item].title.toUpperCase()}</h2>
                         <h3>${[
                           ...new Set(app.store.list[item].s2FieldsOfStudy.map((item) => " " + item.category)),
@@ -43,20 +46,13 @@ export class DisplayAllResearch extends HTMLElement {
                         </div
                     `;
 
-          addDiv.querySelectorAll("a").forEach((link) => {
-            link.addEventListener("click", (event) => {
-              event.preventDefault();
-              app.router.go(`/study-${item}`);
-            });
+        addDiv.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            app.router.go(`/study-${item}`);
           });
+        });
 
-          displayResearchElement.appendChild(addDiv);
-        }
-      } else {
-        let addDiv = document.createElement("div");
-        addDiv.innerHTML = `
-                    <p>Loading...</p>
-                `;
         displayResearchElement.appendChild(addDiv);
       }
     } else {

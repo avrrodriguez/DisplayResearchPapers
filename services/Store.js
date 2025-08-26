@@ -1,6 +1,6 @@
 const Store = {
-  list: null,
-  cart: [],
+  list: [],
+  query: "",
 };
 
 const proxiedStore = new Proxy(Store, {
@@ -8,9 +8,6 @@ const proxiedStore = new Proxy(Store, {
     target[property] = value;
     if (property == "list") {
       window.dispatchEvent(new Event("applistchange"));
-    }
-    if (property == "cart") {
-      window.dispatchEvent(new Event("appcartchange"));
     }
     return true;
   },
