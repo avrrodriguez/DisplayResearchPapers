@@ -39,14 +39,18 @@ export class DisplayAllResearch extends HTMLElement {
                         <h3>${[
                           ...new Set(app.store.list[item].s2FieldsOfStudy.map((item) => " " + item.category)),
                         ]}</h3>
-                        <p>${app.store.list[item].abstract}</p>
+                        <p>${app.store.list[item].abstract ? app.store.list[item].abstract : "No Abstract"}</p>
                         <div class="research-buttons">
-                        <a class="site-button">Download Study</a>
-                            <a class="site-button">More Information</a>
+                        ${
+                          app.store.list[item].openAccessPdf.url.length == 0
+                            ? `<a class="site-button" href="${app.store.list[item].openAccessPdf.url}" target="_blank">Download Study</a>`
+                            : `<></>`
+                        }
+                          <a class="site-button" id="research-button-more">More Information</a>
                         </div
                     `;
 
-        addDiv.querySelectorAll("a").forEach((link) => {
+        addDiv.querySelectorAll("#research-button-more").forEach((link) => {
           link.addEventListener("click", (event) => {
             event.preventDefault();
             app.router.go(`/study-${item}`);

@@ -32,17 +32,19 @@ export class DisplayStudy extends HTMLElement {
           <p class="study-date">${study.publicationDate}</p>
           <h2 class="study-title">${study.title}</h2>
         </div>
-        <h3 class="study-authors">${study.authors}</h3>
+        <h3 class="study-authors">${[...new Set(study.authors.map((item) => " " + item.name))]}</h3>
         <h4 class="study-fields">${[...new Set(study.s2FieldsOfStudy.map((item) => " " + item.category))]}</h3>
         <p class="study-abstract">${study.abstract}</p>
         <div class="study-urls">
           <a 
             class="study-pdf-url site-button"
-            href="/"
+            href="${study.openAccessPdf.url}"
+            target="_blank"
           >PDF Download</a>
           <a 
-            class="study-read-url 
-            site-button" href="/"
+            class="study-read-url site-button" 
+            href="${study.url}"
+            target="_blank"
           >Read Online</a>
         </div>
         <div class="publication-info">
