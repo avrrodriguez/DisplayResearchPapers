@@ -34,13 +34,17 @@ export class DisplayStudy extends HTMLElement {
         </div>
         <h3 class="study-authors">${[...new Set(study.authors.map((item) => " " + item.name))]}</h3>
         <h4 class="study-fields">${[...new Set(study.s2FieldsOfStudy.map((item) => " " + item.category))]}</h3>
-        <p class="study-abstract">${study.abstract}</p>
+        <p class="study-abstract">${study.abstract ? study.abstract : "No Abstract"}</p>
         <div class="study-urls">
-          <a 
-            class="study-pdf-url site-button"
-            href="${study.openAccessPdf.url}"
-            target="_blank"
-          >PDF Download</a>
+          ${
+            study.openAccessPdf.url
+              ? `<a 
+          class="study-pdf-url site-button"
+          href="${study.openAccessPdf.url}"
+          target="_blank"
+        >PDF Download</a>`
+              : ""
+          }
           <a 
             class="study-read-url site-button" 
             href="${study.url}"
@@ -48,8 +52,7 @@ export class DisplayStudy extends HTMLElement {
           >Read Online</a>
         </div>
         <div class="publication-info">
-          <p>${study.publicationName}</p>
-          <a href="/">${study.publicationURL}</a>
+          <p>${study.journal.name}</p>
         </div>
       `;
 

@@ -1,13 +1,19 @@
 export default async function ResearchDataAPI() {
   // console.log("query is:", app.store.query);
-  let fields =
-    "title,year,authors,abstract,s2FieldsOfStudy,journal,publicationDate,url,openAccessPdf,publicationName,publicationURL";
+  let fields = "title,year,authors,abstract,s2FieldsOfStudy,journal,publicationDate,url,openAccessPdf";
   let limit = 3;
   let offset = 0;
-  const response = await fetch(
-    `https://api.semanticscholar.org/graph/v1/paper/search?query=${app.store.query}&fields=${fields}&offset=${offset}&limit=${limit}`
-  );
-  // const response = await fetch("./data/SampleData.json");
+  let responseJson;
+  try {
+    response = await fetch(
+      `https://api.semanticscholar.org/graph/v1/paper/search?query=${app.store.query}&fields=${fields}&offset=${offset}&limit=${limit}`
+    );
+    responseJson = await reponse.json();
+  } catch (Error) {
+    console.log("Error with request");
+    responseJson = { data: [] };
+  }
 
-  return await response.json();
+  // const response = await fetch("./data/SampleData.json");
+  return responseJson.data;
 }

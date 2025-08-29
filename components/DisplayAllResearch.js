@@ -42,9 +42,9 @@ export class DisplayAllResearch extends HTMLElement {
                         <p>${app.store.list[item].abstract ? app.store.list[item].abstract : "No Abstract"}</p>
                         <div class="research-buttons">
                         ${
-                          app.store.list[item].openAccessPdf.url.length == 0
+                          app.store.list[item].openAccessPdf.url.length > 0
                             ? `<a class="site-button" href="${app.store.list[item].openAccessPdf.url}" target="_blank">Download Study</a>`
-                            : `<></>`
+                            : ``
                         }
                           <a class="site-button" id="research-button-more">More Information</a>
                         </div

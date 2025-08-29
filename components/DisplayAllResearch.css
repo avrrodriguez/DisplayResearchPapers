@@ -22,6 +22,7 @@ display-all-research > div > .research-buttons {
 
 display-all-research > div:nth-child(n + 2) {
   display: grid;
+  justify-self: center;
   gap: 20px;
   grid-template: auto auto auto auto / 1fr 1fr;
   grid-template-areas: 
