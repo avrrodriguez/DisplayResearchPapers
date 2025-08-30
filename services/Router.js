@@ -44,13 +44,28 @@ const Router = {
 
     // adds page based on route
     if (pageElement) {
-      const cache = document.getElementById("content");
-      cache.innerHTML = "";
-      cache.appendChild(pageElement);
+      function changePage() {
+        // get current page element
+        console.log(pageElement);
+        const cache = document.getElementById("content").firstElementChild();
+        if (cache) {
+          cache.remove();
+          document.getElementById("content").appendChild(pageElement);
+        } else {
+          document.getElementById("content").appendChild(pageElement);
+        }
+      }
+
+      if (!document.startViewTransition) {
+        changePage();
+      } else {
+        document.startViewTransition(() => changePage());
+      }
+
       window.scrollX = 0;
-      window.scrollY = 0;
     } else {
       // 404 handler
+      console.log("Error with page element");
     }
   },
 };
