@@ -7,6 +7,7 @@ export class DisplayAllResearch extends HTMLElement {
 
     let element = document.querySelector("section");
     let styles = document.createElement("style");
+    console.log("in display all research");
 
     async function LoadCSS() {
       let stylesFile = await fetch("./components/DisplayAllResearch.css");
@@ -25,9 +26,10 @@ export class DisplayAllResearch extends HTMLElement {
   }
 
   render() {
+    console.log("render content");
     let section = document.getElementById("content");
-    if (section.childNodes[0]) {
-      let displayResearchElement = section.childNodes[0];
+    if (section.querySelector("display-all-research")) {
+      let displayResearchElement = section.querySelector("display-all-research");
       displayResearchElement.innerHTML = ``;
 
       displayResearchElement.appendChild(SearchForm());

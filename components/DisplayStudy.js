@@ -4,6 +4,7 @@ export class DisplayStudy extends HTMLElement {
 
     let element = document.querySelector("section");
     let styles = document.createElement("style");
+    console.log("in display study");
 
     async function LoadCSS() {
       let stylesFile = await fetch("./components/DisplayStudy.css");
@@ -20,8 +21,8 @@ export class DisplayStudy extends HTMLElement {
 
   render() {
     const contentSection = document.getElementById("content");
-    if (contentSection.childNodes[0]) {
-      let displayStudy = contentSection.childNodes[0];
+    if (contentSection.querySelector("display-study")) {
+      let displayStudy = contentSection.querySelector("display-study");
       displayStudy.innerHTML = "";
 
       let study = this.getStudyInfo();

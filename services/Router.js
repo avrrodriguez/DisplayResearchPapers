@@ -30,6 +30,7 @@ const Router = {
     let pageElement = null;
     switch (route) {
       case "/":
+        console.log("creating page element");
         pageElement = document.createElement("display-all-research");
         break;
       case "/cart":
@@ -46,14 +47,9 @@ const Router = {
     if (pageElement) {
       function changePage() {
         // get current page element
-        console.log(pageElement);
-        const cache = document.getElementById("content").firstElementChild();
-        if (cache) {
-          cache.remove();
-          document.getElementById("content").appendChild(pageElement);
-        } else {
-          document.getElementById("content").appendChild(pageElement);
-        }
+        const cache = document.getElementById("content");
+        console.log(cache.children.length);
+        document.getElementById("content").appendChild(pageElement);
       }
 
       if (!document.startViewTransition) {

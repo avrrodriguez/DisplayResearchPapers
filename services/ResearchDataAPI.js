@@ -4,16 +4,18 @@ export default async function ResearchDataAPI() {
   let limit = 3;
   let offset = 0;
   let responseJson;
-  try {
-    response = await fetch(
-      `https://api.semanticscholar.org/graph/v1/paper/search?query=${app.store.query}&fields=${fields}&offset=${offset}&limit=${limit}`
-    );
-    responseJson = await reponse.json();
-  } catch (Error) {
-    console.log("Error with request");
-    responseJson = { data: [] };
-  }
+  // try {
+  //   response = await fetch(
+  //     `https://api.semanticscholar.org/graph/v1/paper/search?query=${app.store.query}&fields=${fields}&offset=${offset}&limit=${limit}`
+  //   );
+  //   responseJson = await reponse.json();
+  // } catch (Error) {
+  //   console.log("Error with request");
+  //   responseJson = { data: [] };
+  // }
 
-  // const response = await fetch("./data/SampleData.json");
+  let response = await fetch("./data/SampleData.json");
+  responseJson = await response.json();
+  console.log(responseJson);
   return responseJson.data;
 }
