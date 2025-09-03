@@ -4,18 +4,6 @@ import SearchForm from "./SearchForm.js";
 export class DisplayAllResearch extends HTMLElement {
   constructor() {
     super();
-
-    let element = document.querySelector("section");
-    let styles = document.createElement("style");
-    console.log("in display all research");
-
-    async function LoadCSS() {
-      let stylesFile = await fetch("./components/DisplayAllResearch.css");
-      styles.textContent = await stylesFile.text();
-      element.appendChild(styles);
-    }
-
-    LoadCSS();
   }
 
   connectedCallback() {
@@ -28,6 +16,18 @@ export class DisplayAllResearch extends HTMLElement {
   render() {
     console.log("render content");
     let section = document.getElementById("content");
+
+    let styles = document.createElement("style");
+    console.log("in display all research");
+
+    async function LoadCSS() {
+      let stylesFile = await fetch("./components/DisplayAllResearch.css");
+      styles.textContent = await stylesFile.text();
+      section.appendChild(styles);
+    }
+
+    LoadCSS();
+
     if (section.querySelector("display-all-research")) {
       let displayResearchElement = section.querySelector("display-all-research");
       displayResearchElement.innerHTML = ``;

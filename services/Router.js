@@ -48,6 +48,7 @@ const Router = {
       function changePage() {
         // get current page element
         const cache = document.getElementById("content");
+        cache.innerHTML = "";
         console.log(cache.children.length);
         document.getElementById("content").appendChild(pageElement);
       }
