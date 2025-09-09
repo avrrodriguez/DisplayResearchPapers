@@ -43,12 +43,28 @@ export class DisplayAllResearch extends HTMLElement {
 `;
   }
 
-  render() {
-    // console.log("render content");
-    let section = document.getElementById("content");
+  DataItems() {
+    let dataItemsDiv = document.createElement("div");
+    for (let item = 0; item < app.store.list.length; item++) {
+      let addDiv = document.createElement("div");
+      addDiv.innerHTML += this.InnerHTML(item);
 
-    let styles = this.LoadCSS();
-    section.appendChild(styles);
+      addDiv.querySelector(`#research-button-${item}`).addEventListener("click", (event) => {
+        event.preventDefault();
+        app.router.go(`/study-${item}`);
+      });
+      dataItemsDiv.appendChild(addDiv);
+    }
+    return dataItemsDiv;
+  }
+
+  render() {
+    console.log("render content");
+    let section = document.getElementById("content");
+    if (!section.querySelector("style")) {
+      let styles = this.LoadCSS();
+      section.appendChild(styles);
+    }
 
     if (section.querySelector("display-all-research")) {
       let displayResearchElement = section.querySelector("display-all-research");
@@ -56,16 +72,7 @@ export class DisplayAllResearch extends HTMLElement {
 
       displayResearchElement.appendChild(SearchForm());
 
-      for (let item = 0; item < app.store.list.length; item++) {
-        let addDiv = document.createElement("div");
-        addDiv.innerHTML += this.InnerHTML(item);
-
-        addDiv.querySelector(`#research-button-${item}`).addEventListener("click", (event) => {
-          event.preventDefault();
-          app.router.go(`/study-${item}`);
-        });
-        displayResearchElement.appendChild(addDiv);
-      }
+      if (app.store.list.length > 0) displayResearchElement.appendChild(this.DataItems());
     } else {
       let addDiv = document.createElement("div");
       addDiv.innerHTML = `

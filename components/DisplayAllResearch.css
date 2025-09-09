@@ -3,24 +3,29 @@ display-all-research {
   gap: 50px;
 }
 
-display-all-research > div > h2 {
+display-all-research h2 {
   grid-area: title;
 }
 
-display-all-research > div > h3 {
+display-all-research h3 {
   grid-area: categories;
   margin-bottom: 10px;
 }
 
-display-all-research > div > p {
+display-all-research p {
   grid-area: text;
 }
 
-display-all-research > div > .research-buttons {
+display-all-research .research-buttons {
   grid-area: buttons;
 }
 
-display-all-research > div:nth-child(n + 2) {
+display-all-research > div {
+  display: grid;
+  gap: 50px;
+}
+
+display-all-research > div > div {
   display: grid;
   justify-self: center;
   gap: 20px;
