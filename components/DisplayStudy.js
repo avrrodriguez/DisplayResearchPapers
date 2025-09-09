@@ -4,7 +4,7 @@ export class DisplayStudy extends HTMLElement {
 
     let element = document.querySelector("section");
     let styles = document.createElement("style");
-    console.log("in display study");
+    // console.log("in display study");
 
     async function LoadCSS() {
       let stylesFile = await fetch("./components/DisplayStudy.css");

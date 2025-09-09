@@ -30,14 +30,14 @@ const Router = {
     let pageElement = null;
     switch (route) {
       case "/":
-        console.log("creating page element");
+        // console.log("creating page element");
         pageElement = document.createElement("display-all-research");
         break;
       case "/cart":
         break;
       default:
         if (route.startsWith("/study-")) {
-          console.log("adding display study element");
+          // console.log("adding display study element");
           pageElement = document.createElement("display-study");
         }
         break;
@@ -49,7 +49,7 @@ const Router = {
         // get current page element
         const cache = document.getElementById("content");
         cache.innerHTML = "";
-        console.log(cache.children.length);
+        // console.log(cache.children.length);
         document.getElementById("content").appendChild(pageElement);
       }
 

@@ -16,6 +16,6 @@ export default async function ResearchDataAPI() {
 
   let response = await fetch("./data/SampleData.json");
   responseJson = await response.json();
-  console.log(responseJson);
+  // console.log(responseJson);
   return responseJson.data;
 }

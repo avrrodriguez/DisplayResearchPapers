@@ -8,7 +8,7 @@ export default function SearchForm() {
 
   formDiv.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
-    console.log("form submitted");
+    // console.log("form submitted");
     app.store.query = event.target.firstElementChild.value;
     LoadData();
   });
