@@ -59,7 +59,7 @@ export class DisplayAllResearch extends HTMLElement {
   }
 
   render() {
-    console.log("render content");
+    // console.log("render content");
     let section = document.getElementById("content");
     if (!section.querySelector("style")) {
       let styles = this.LoadCSS();
