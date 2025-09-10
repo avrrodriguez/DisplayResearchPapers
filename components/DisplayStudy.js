@@ -4,7 +4,6 @@ export class DisplayStudy extends HTMLElement {
 
     let element = document.querySelector("section");
     let styles = document.createElement("style");
-    // console.log("in display study");
 
     async function LoadCSS() {
       let stylesFile = await fetch("./components/DisplayStudy.css");
@@ -50,6 +49,11 @@ export class DisplayStudy extends HTMLElement {
   `;
   }
 
+  getStudyInfo() {
+    let currentUrl = document.URL;
+    return app.store.list[currentUrl.split("-")[1]];
+  }
+
   render() {
     const contentSection = document.getElementById("content");
     if (contentSection.querySelector("display-study")) {
@@ -63,10 +67,5 @@ export class DisplayStudy extends HTMLElement {
 
       displayStudy.appendChild(studyDiv);
     }
-  }
-
-  getStudyInfo() {
-    let currentUrl = document.URL;
-    return app.store.list[currentUrl.split("-")[1]];
   }
 }
